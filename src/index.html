@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ${htmlAttrs}>
+  <head>
+    ${head}
+  </head>
+  <body ${bodyAttrs}>
+    ${app}
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous">
+            </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="~/assets/js/carousel-swipe.js"></script> <!-- TODO: Change path -->
+    <script>
+        jQuery(document).ready(function ($) {
+            //setup carousel with swipe for mobile
+            $(".carousel").carousel();
+            // Night Mode JS
+            $(".site-header").on('change', '#night-mode', function () {
+                if ($(this).prop('checked')) {
+                    $('body').addClass('night');
+                    jQuery('.text-dark').removeClass('text-dark').addClass('text-light');
+                    jQuery('.text-black').removeClass('text-black').addClass('text-black-light');
+                    jQuery('.text-half-black').removeClass('text-half-black').addClass('text-half-light');
+                } else {
+                    $('body').removeClass('night');
+                    jQuery('.text-light:not(.btn):not(.badge)').removeClass('text-light').addClass('text-dark');
+                    jQuery('.text-black-light').removeClass('text-black-light').addClass('text-black');
+                    jQuery('.text-half-light').removeClass('text-half-light').addClass('text-half-black');
+                }
+            });
+        });
+    </script>
+  </body>
+</html>
