@@ -4,7 +4,7 @@
             <figure class="figure position-relative">
                 <a class="position-absolute badge bg-orange-2 rounded-0 exo2 py-3 px-4 text-white text-uppercase" :href="'//' + posts[0].node.tags[0].link[0].substring(7)">{{posts[0].node.tags[0].name[0]}}</a>
                 <div class="image-thumb">
-                    <g-image :src="posts[0].node.imgUrlFull" class="figure-img img-fluid" alt="A generic 1600X900 placeholder image in a figure." />
+                    <g-image :src="posts[0].node.imgUrlFull" class="figure-img img-fluid" alt="A generic 1600X900 placeholder image in a figure."/>
                 </div>
                 <figcaption class="figure-caption position-absolute-bottom p-3">
                     <h2><a class="text-white font-weight-bold" :href="'//' + posts[0].node.path.substring(7)" v-html="posts[0].node.title">{{posts[0].node.title}}</a></h2>
@@ -17,7 +17,7 @@
             <figure class="figure position-relative">
                 <a class="position-absolute badge bg-orange-2 rounded-0 exo2 py-3 px-4 text-white text-uppercase" :href="'//' + posts[1].node.tags[0].link[0].substring(7)">{{posts[1].node.tags[0].name[0]}}</a>
                 <div class="image-thumb">
-                    <g-image :src="posts[1].node.imgUrlFull" class="figure-img img-fluid" alt="A generic 1600X900 placeholder image in a figure." />
+                    <g-image :src="posts[1].node.imgUrlFull" class="figure-img img-fluid" alt="A generic 1600X900 placeholder image in a figure."/>
                 </div>
                 <figcaption class="figure-caption  position-absolute-bottom p-3">
                     <h2><a class="text-white font-weight-bold" :href="'//' + posts[1].node.path.substring(7)" v-html="posts[1].node.title">{{posts[1].node.title}}</a></h2>

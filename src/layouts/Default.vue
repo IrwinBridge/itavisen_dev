@@ -6,8 +6,8 @@
                     <div class="row pt-4 pt-md-5">
                     <div class="col-md-4  pb-4">
                         <a href="index.html" title="Itavisen">
-                            <g-image src="~/assets/css/img/logo.png" class="logo-day" alt="Itavisen" />
-                            <g-image src="~/assets/css/img/logo-night.png" class="logo-night" alt="Itavisen" />
+                            <g-image src="~/assets/img/logo.png" class="logo-day" alt="Itavisen" />
+                            <g-image src="~/assets/img/logo-night.png" class="logo-night" alt="Itavisen" />
                         </a>
                         <div class="pull-right navbar navbar-light p-0">
                             <button class="navbar-toggler d-md-none bg-light" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -94,8 +94,8 @@
             <div class="container">
                 <div class="row exo2 text-center ">
                 <div class="col-md-4 pb-4 text-md-left">
-                    <g-image src="~/assets/css/img/logo.png" class="logo-day" alt="Itavisen" />
-                    <g-image src="~/assets/css/img/logo-night.png" class="logo-night" alt="Itavisen" />
+                    <g-image src="~/assets/img/logo.png" class="logo-day" alt="Itavisen" />
+                    <g-image src="~/assets/img/logo-night.png" class="logo-night" alt="Itavisen" />
                     <p class="mb-2 mt-4">Tips Oss: <a href="mailto:red@itavisen.no" title="mail to red@itavisen.no"> red@itavisen.no</a></p>
                     <p class="pb-0">Ansvarlig Redaktør: Trond Bie</p>
                 </div>

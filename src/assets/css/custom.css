@@ -69,7 +69,7 @@ body{
     pointer-events: none;   
 }
 #search-top input {
-    background: #fff url('./img/icon-s.png') no-repeat right 10px center;
+    background: #fff url('../img/icon-s.png') no-repeat right 10px center;
     border: solid 1px transparent;
     padding: 9px 32px 9px 10px;
     width: 55px;
@@ -128,7 +128,7 @@ body{
     color: #fff;
     height: 100%;
     cursor: pointer;
-    background: url(./img/submit.png) no-repeat #ff8c00;
+    background: url(../img/submit.png) no-repeat #ff8c00;
     background-position: center;
 }
 .social-links a {
@@ -386,7 +386,7 @@ body{
 }
 /*// Exclusive PAge*/
 #exclusive-slider{
-    background: url('./img/exclusive-bg.jpg') no-repeat;
+    background: url('../img/exclusive-bg.jpg') no-repeat;
     background-size: cover;
 }
 #exclusive-slider .slick-dots{
@@ -460,3 +460,6 @@ a {
     }
 }
 /*Responisve Style*/
+
+/*Bootstrap changes*/
+/*Bootstrap changes*/

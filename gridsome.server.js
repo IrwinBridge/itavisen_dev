@@ -28,7 +28,8 @@ module.exports = function (api) {
             link: item._embedded['wp:term'][1].map((tag) => {
               return tag.link;
             }),
-          }]
+          }],
+          comments: (Math.floor(Math.random() * 150) + 3) + ' comments'
         }
       });
     }

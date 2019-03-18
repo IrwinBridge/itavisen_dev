@@ -17,7 +17,7 @@
                         </div>
                         <div class="col-md-6 mb-2">
                             <figure class="figure position-relative">
-                                <a class="position-absolute badge bg-3 rounded-0 exo2 text-white py-3 px-4" :href="'//' + posts[2].node.tags[0].link[0].substring(7)">{{posts[2].node.tags[0].name[0]}}</a>
+                                <a class="position-absolute badge bg-3 rounded-0 exo2 text-white py-3 px-4 text-uppercase" :href="'//' + posts[2].node.tags[0].link[0].substring(7)">{{posts[2].node.tags[0].name[0]}}</a>
                                 <div class="image-thumb">
                                     <a :href="posts[2].node.path.substring(7)" class="link-thumb">
                                         <g-image :src="posts[2].node.imgUrlFull" class="figure-img img-fluid" alt="A generic 1600X1200 placeholder image in a figure." />
@@ -27,13 +27,13 @@
                                     <!--a href="#" class="badge bg-4 exo2 text-white py-2 px-2 exo2 rounded-10" title="Oppdatert">Oppdatert</a-->
                                     <h2 class="h4"><a class="text-white font-weight-bold" :href="posts[2].node.path.substring(7)" v-html="posts[2].node.title">{{posts[2].node.title}}</a></h2>
                                     <p class="text-white" v-html="posts[2].node.excerpt">{{posts[2].node.excerpt}}</p>
-                                    <p class="text-white"><i class="fa fa-comments mr-2 text-gray"></i>24 comments</p>
+                                    <p class="text-white"><i class="fa fa-comments mr-2 text-gray"></i>{{posts[2].node.comments}}</p>
                                 </figcaption>
                             </figure>
                         </div>
                         <div class="col-md-6 mb-2">
                             <figure class="figure position-relative">
-                                <a class="badge bg-orange exo2 text-white position-absolute  py-3 px-4 rounded-0" :href="'//' + posts[3].node.tags[0].link[0].substring(7)">{{posts[3].node.tags[0].name[0]}}</a>
+                                <a class="badge bg-orange exo2 text-white position-absolute py-3 px-4 rounded-0 text-uppercase" :href="'//' + posts[3].node.tags[0].link[0].substring(7)">{{posts[3].node.tags[0].name[0]}}</a>
                                 <div class="image-thumb">
                                     <a :href="posts[3].node.path.substring(7)" class="link-thumb">
                                         <g-image :src="posts[3].node.imgUrlFull" class="figure-img img-fluid" alt="A generic 1600X1200 placeholder image in a figure." />
@@ -43,7 +43,7 @@
                                     <!--a href="#" class="badge bg-4 exo2 text-white py-2 px-2 exo2 rounded-10" title="Oppdatert">Category</a-->
                                     <h2 class="h4"><a class="text-white font-weight-bold" :href="posts[3].node.path.substring(7)" v-html="posts[3].node.title">{{posts[3].node.title}}</a></h2>
                                     <p class="text-white" v-html="posts[3].node.excerpt">{{posts[3].node.excerpt}}</p>
-                                    <p class="text-white"><i class="fa fa-comments mr-2 "></i>24 comments</p>
+                                    <p class="text-white"><i class="fa fa-comments mr-2 "></i>{{posts[3].node.comments}}</p>
                                 </figcaption>
                             </figure>
                         </div>
@@ -83,43 +83,43 @@
                                         <div class="carousel-inner">
                                             <div class="carousel-item active">
                                                 <div class="row mb-3">
-                                                    <div class="col-md-4"><a href="javascript:void(0)" class="link-thumb"><g-image class="d-block w-100" src="~/assets/css/img/sslide-1.jpg" alt="First slide" /></a></div>
+                                                    <div class="col-md-4"><a href="javascript:void(0)" class="link-thumb"><g-image class="d-block w-100" src="~/assets/img/sslide-1.jpg" alt="First slide" /></a></div>
                                                     <div class="col-md-8"><small :class="right_posts_author_text">TECH - 12 Months Ago</small><a :class="right_posts_text" href="#" title="Title here">Dette er Apples nye MacBook Pro – alt er nytt</a></div>
                                                 </div>
                                                 <div class="row mb-3">
-                                                    <div class="col-md-4"><a href="javascript:void(0)" class="link-thumb"><g-image class="d-block w-100" src="~/assets/css/img/sslide-2.jpg" alt="First slide"/></a></div>
+                                                    <div class="col-md-4"><a href="javascript:void(0)" class="link-thumb"><g-image class="d-block w-100" src="~/assets/img/sslide-2.jpg" alt="First slide"/></a></div>
                                                     <div class="col-md-8"><small :class="right_posts_author_text">TECH - 12 Months Ago</small><a :class="right_posts_text" href="#" title="Title here">Gutt måtte opereres etter å skjøvet en USB-kabel inn i penis</a></div>
                                                 </div>
                                                 <div class="row mb-3">
-                                                    <div class="col-md-4"><a href="javascript:void(0)" class="link-thumb"><g-image class="d-block w-100" src="~/assets/css/img/sslide-3.jpg" alt="First slide"/></a></div>
+                                                    <div class="col-md-4"><a href="javascript:void(0)" class="link-thumb"><g-image class="d-block w-100" src="~/assets/img/sslide-3.jpg" alt="First slide"/></a></div>
                                                     <div class="col-md-8"><small :class="right_posts_author_text">TECH - 12 Months Ago</small><a :class="right_posts_text" href="#" title="Title here">Kameratrøbbel for Google Pixel 2-brukere</a></div>
                                                 </div>
                                             </div>
                                             <div class="carousel-item">
                                                 <div class="row mb-3">
-                                                    <div class="col-md-4"><a href="javascript:void(0)" class="link-thumb"><g-image class="d-block w-100" src="~/assets/css/img/sslide-1.jpg" alt="First slide"/></a></div>
+                                                    <div class="col-md-4"><a href="javascript:void(0)" class="link-thumb"><g-image class="d-block w-100" src="~/assets/img/sslide-1.jpg" alt="First slide"/></a></div>
                                                     <div class="col-md-8"><small :class="right_posts_author_text">TECH - 12 Months Ago</small><a :class="right_posts_text" href="#" title="Title here">Dette er Apples nye MacBook Pro – alt er nytt</a></div>
                                                 </div>
                                                 <div class="row mb-3">
-                                                    <div class="col-md-4"><a href="javascript:void(0)" class="link-thumb"><g-image class="d-block w-100" src="~/assets/css/img/sslide-2.jpg" alt="First slide"/></a></div>
+                                                    <div class="col-md-4"><a href="javascript:void(0)" class="link-thumb"><g-image class="d-block w-100" src="~/assets/img/sslide-2.jpg" alt="First slide"/></a></div>
                                                     <div class="col-md-8"><small :class="right_posts_author_text">TECH - 12 Months Ago</small><a :class="right_posts_text" href="#" title="Title here">Gutt måtte opereres etter å skjøvet en USB-kabel inn i penis</a></div>
                                                 </div>
                                                 <div class="row mb-3">
-                                                    <div class="col-md-4"><a href="javascript:void(0)" class="link-thumb"><g-image class="d-block w-100" src="~/assets/css/img/sslide-3.jpg" alt="First slide"/></a></div>
+                                                    <div class="col-md-4"><a href="javascript:void(0)" class="link-thumb"><g-image class="d-block w-100" src="~/assets/img/sslide-3.jpg" alt="First slide"/></a></div>
                                                     <div class="col-md-8"><small :class="right_posts_author_text">TECH - 12 Months Ago</small><a :class="right_posts_text" href="#" title="Title here">Kameratrøbbel for Google Pixel 2-brukere</a></div>
                                                 </div>
                                             </div>
                                             <div class="carousel-item">
                                                 <div class="row mb-3">
-                                                    <div class="col-md-4"><a href="javascript:void(0)" class="link-thumb"><g-image class="d-block w-100" src="~/assets/css/img/sslide-1.jpg" alt="First slide"/></a></div>
+                                                    <div class="col-md-4"><a href="javascript:void(0)" class="link-thumb"><g-image class="d-block w-100" src="~/assets/img/sslide-1.jpg" alt="First slide"/></a></div>
                                                     <div class="col-md-8"><small :class="right_posts_author_text">TECH - 12 Months Ago</small><a :class="right_posts_text" href="#" title="Title here">Dette er Apples nye MacBook Pro – alt er nytt</a></div>
                                                 </div>
                                                 <div class="row mb-3">
-                                                    <div class="col-md-4"><a href="javascript:void(0)" class="link-thumb"><g-image class="d-block w-100" src="~/assets/css/img/sslide-2.jpg" alt="First slide"/></a></div>
+                                                    <div class="col-md-4"><a href="javascript:void(0)" class="link-thumb"><g-image class="d-block w-100" src="~/assets/img/sslide-2.jpg" alt="First slide"/></a></div>
                                                     <div class="col-md-8"><small :class="right_posts_author_text">TECH - 12 Months Ago</small><a :class="right_posts_text" href="#" title="Title here">Gutt måtte opereres etter å skjøvet en USB-kabel inn i penis</a></div>
                                                 </div>
                                                 <div class="row mb-3">
-                                                    <div class="col-md-4"><a href="javascript:void(0)" class="link-thumb"><g-image class="d-block w-100" src="~/assets/css/img/sslide-3.jpg" alt="First slide"/></a></div>
+                                                    <div class="col-md-4"><a href="javascript:void(0)" class="link-thumb"><g-image class="d-block w-100" src="~/assets/img/sslide-3.jpg" alt="First slide"/></a></div>
                                                     <div class="col-md-8"><small :class="right_posts_author_text">TECH - 12 Months Ago</small><a :class="right_posts_text" href="#" title="Title here">Kameratrøbbel for Google Pixel 2-brukere</a></div>
                                                 </div>
                                             </div>
@@ -142,43 +142,43 @@
                                         <div class="carousel-inner">
                                             <div class="carousel-item active">
                                                 <div class="row mb-3">
-                                                    <div class="col-md-4"><a href="javascript:void(0)" class="link-thumb"><g-image class="d-block w-100" src="~/assets/css/img/sslide-1.jpg" alt="First slide"/></a></div>
+                                                    <div class="col-md-4"><a href="javascript:void(0)" class="link-thumb"><g-image class="d-block w-100" src="~/assets/img/sslide-1.jpg" alt="First slide"/></a></div>
                                                     <div class="col-md-8"><small :class="right_posts_author_text">TECH - 12 Months Ago</small><a :class="right_posts_text" href="#" title="Title here">Dette er Apples nye MacBook Pro – alt er nytt</a></div>
                                                 </div>
                                                 <div class="row mb-3">
-                                                    <div class="col-md-4"><a href="javascript:void(0)" class="link-thumb"><g-image class="d-block w-100" src="~/assets/css/img/sslide-2.jpg" alt="First slide"/></a></div>
+                                                    <div class="col-md-4"><a href="javascript:void(0)" class="link-thumb"><g-image class="d-block w-100" src="~/assets/img/sslide-2.jpg" alt="First slide"/></a></div>
                                                     <div class="col-md-8"><small :class="right_posts_author_text">TECH - 12 Months Ago</small><a :class="right_posts_text" href="#" title="Title here">Gutt måtte opereres etter å skjøvet en USB-kabel inn i penis</a></div>
                                                 </div>
                                                 <div class="row mb-3">
-                                                    <div class="col-md-4"><a href="javascript:void(0)" class="link-thumb"><g-image class="d-block w-100" src="~/assets/css/img/sslide-3.jpg" alt="First slide"/></a></div>
+                                                    <div class="col-md-4"><a href="javascript:void(0)" class="link-thumb"><g-image class="d-block w-100" src="~/assets/img/sslide-3.jpg" alt="First slide"/></a></div>
                                                     <div class="col-md-8"><small :class="right_posts_author_text">TECH - 12 Months Ago</small><a :class="right_posts_text" href="#" title="Title here">Kameratrøbbel for Google Pixel 2-brukere</a></div>
                                                 </div>
                                             </div>
                                             <div class="carousel-item">
                                                 <div class="row mb-3">
-                                                    <div class="col-md-4"><a href="javascript:void(0)" class="link-thumb"><g-image class="d-block w-100" src="~/assets/css/img/sslide-1.jpg" alt="First slide"/></a></div>
+                                                    <div class="col-md-4"><a href="javascript:void(0)" class="link-thumb"><g-image class="d-block w-100" src="~/assets/img/sslide-1.jpg" alt="First slide"/></a></div>
                                                     <div class="col-md-8"><small :class="right_posts_author_text">TECH - 12 Months Ago</small><a :class="right_posts_text" href="#" title="Title here">Dette er Apples nye MacBook Pro – alt er nytt</a></div>
                                                 </div>
                                                 <div class="row mb-3">
-                                                    <div class="col-md-4"><a href="javascript:void(0)" class="link-thumb"><g-image class="d-block w-100" src="~/assets/css/img/sslide-2.jpg" alt="First slide"/></a></div>
+                                                    <div class="col-md-4"><a href="javascript:void(0)" class="link-thumb"><g-image class="d-block w-100" src="~/assets/img/sslide-2.jpg" alt="First slide"/></a></div>
                                                     <div class="col-md-8"><small :class="right_posts_author_text">TECH - 12 Months Ago</small><a :class="right_posts_text" href="#" title="Title here">Gutt måtte opereres etter å skjøvet en USB-kabel inn i penis</a></div>
                                                 </div>
                                                 <div class="row mb-3">
-                                                    <div class="col-md-4"><a href="javascript:void(0)" class="link-thumb"><g-image class="d-block w-100" src="~/assets/css/img/sslide-3.jpg" alt="First slide"/></a></div>
+                                                    <div class="col-md-4"><a href="javascript:void(0)" class="link-thumb"><g-image class="d-block w-100" src="~/assets/img/sslide-3.jpg" alt="First slide"/></a></div>
                                                     <div class="col-md-8"><small :class="right_posts_author_text">TECH - 12 Months Ago</small><a :class="right_posts_text" href="#" title="Title here">Kameratrøbbel for Google Pixel 2-brukere</a></div>
                                                 </div>
                                             </div>
                                             <div class="carousel-item">
                                                 <div class="row mb-3">
-                                                    <div class="col-md-4"><a href="javascript:void(0)" class="link-thumb"><g-image class="d-block w-100" src="~/assets/css/img/sslide-1.jpg" alt="First slide"/></a></div>
+                                                    <div class="col-md-4"><a href="javascript:void(0)" class="link-thumb"><g-image class="d-block w-100" src="~/assets/img/sslide-1.jpg" alt="First slide"/></a></div>
                                                     <div class="col-md-8"><small :class="right_posts_author_text">TECH - 12 Months Ago</small><a :class="right_posts_text" href="#" title="Title here">Dette er Apples nye MacBook Pro – alt er nytt</a></div>
                                                 </div>
                                                 <div class="row mb-3">
-                                                    <div class="col-md-4"><a href="javascript:void(0)" class="link-thumb"><g-image class="d-block w-100" src="~/assets/css/img/sslide-2.jpg" alt="First slide"/></a></div>
+                                                    <div class="col-md-4"><a href="javascript:void(0)" class="link-thumb"><g-image class="d-block w-100" src="~/assets/img/sslide-2.jpg" alt="First slide"/></a></div>
                                                     <div class="col-md-8"><small :class="right_posts_author_text">TECH - 12 Months Ago</small><a :class="right_posts_text" href="#" title="Title here">Gutt måtte opereres etter å skjøvet en USB-kabel inn i penis</a></div>
                                                 </div>
                                                 <div class="row mb-3">
-                                                    <div class="col-md-4"><a href="javascript:void(0)" class="link-thumb"><g-image class="d-block w-100" src="~/assets/css/img/sslide-3.jpg" alt="First slide"/></a></div>
+                                                    <div class="col-md-4"><a href="javascript:void(0)" class="link-thumb"><g-image class="d-block w-100" src="~/assets/img/sslide-3.jpg" alt="First slide"/></a></div>
                                                     <div class="col-md-8"><small :class="right_posts_author_text">TECH - 12 Months Ago</small><a :class="right_posts_text" href="#" title="Title here">Kameratrøbbel for Google Pixel 2-brukere</a></div>
                                                 </div>
                                             </div>
@@ -200,43 +200,43 @@
                                         <div class="carousel-inner">
                                             <div class="carousel-item active">
                                                 <div class="row mb-3">
-                                                    <div class="col-md-4"><a href="javascript:void(0)" class="link-thumb"><g-image class="d-block w-100" src="~/assets/css/img/sslide-1.jpg" alt="First slide"/></a></div>
+                                                    <div class="col-md-4"><a href="javascript:void(0)" class="link-thumb"><g-image class="d-block w-100" src="~/assets/img/sslide-1.jpg" alt="First slide"/></a></div>
                                                     <div class="col-md-8"><small :class="right_posts_author_text">TECH - 12 Months Ago</small><a :class="right_posts_text" href="#" title="Title here">Dette er Apples nye MacBook Pro – alt er nytt</a></div>
                                                 </div>
                                                 <div class="row mb-3">
-                                                    <div class="col-md-4"><a href="javascript:void(0)" class="link-thumb"><g-image class="d-block w-100" src="~/assets/css/img/sslide-2.jpg" alt="First slide"/></a></div>
+                                                    <div class="col-md-4"><a href="javascript:void(0)" class="link-thumb"><g-image class="d-block w-100" src="~/assets/img/sslide-2.jpg" alt="First slide"/></a></div>
                                                     <div class="col-md-8"><small :class="right_posts_author_text">TECH - 12 Months Ago</small><a :class="right_posts_text" href="#" title="Title here">Gutt måtte opereres etter å skjøvet en USB-kabel inn i penis</a></div>
                                                 </div>
                                                 <div class="row mb-3">
-                                                    <div class="col-md-4"><a href="javascript:void(0)" class="link-thumb"><g-image class="d-block w-100" src="~/assets/css/img/sslide-3.jpg" alt="First slide"/></a></div>
+                                                    <div class="col-md-4"><a href="javascript:void(0)" class="link-thumb"><g-image class="d-block w-100" src="~/assets/img/sslide-3.jpg" alt="First slide"/></a></div>
                                                     <div class="col-md-8"><small :class="right_posts_author_text">TECH - 12 Months Ago</small><a :class="right_posts_text" href="#" title="Title here">Kameratrøbbel for Google Pixel 2-brukere</a></div>
                                                 </div>
                                             </div>
                                             <div class="carousel-item">
                                                 <div class="row mb-3">
-                                                    <div class="col-md-4"><a href="javascript:void(0)" class="link-thumb"><g-image class="d-block w-100" src="~/assets/css/img/sslide-1.jpg" alt="First slide"/></a></div>
+                                                    <div class="col-md-4"><a href="javascript:void(0)" class="link-thumb"><g-image class="d-block w-100" src="~/assets/img/sslide-1.jpg" alt="First slide"/></a></div>
                                                     <div class="col-md-8"><small :class="right_posts_author_text">TECH - 12 Months Ago</small><a :class="right_posts_text" href="#" title="Title here">Dette er Apples nye MacBook Pro – alt er nytt</a></div>
                                                 </div>
                                                 <div class="row mb-3">
-                                                    <div class="col-md-4"><a href="javascript:void(0)" class="link-thumb"><g-image class="d-block w-100" src="~/assets/css/img/sslide-2.jpg" alt="First slide"/></a></div>
+                                                    <div class="col-md-4"><a href="javascript:void(0)" class="link-thumb"><g-image class="d-block w-100" src="~/assets/img/sslide-2.jpg" alt="First slide"/></a></div>
                                                     <div class="col-md-8"><small :class="right_posts_author_text">TECH - 12 Months Ago</small><a :class="right_posts_text" href="#" title="Title here">Gutt måtte opereres etter å skjøvet en USB-kabel inn i penis</a></div>
                                                 </div>
                                                 <div class="row mb-3">
-                                                    <div class="col-md-4"><a href="javascript:void(0)" class="link-thumb"><g-image class="d-block w-100" src="~/assets/css/img/sslide-3.jpg" alt="First slide"/></a></div>
+                                                    <div class="col-md-4"><a href="javascript:void(0)" class="link-thumb"><g-image class="d-block w-100" src="~/assets/img/sslide-3.jpg" alt="First slide"/></a></div>
                                                     <div class="col-md-8"><small :class="right_posts_author_text">TECH - 12 Months Ago</small><a :class="right_posts_text" href="#" title="Title here">Kameratrøbbel for Google Pixel 2-brukere</a></div>
                                                 </div>
                                             </div>
                                             <div class="carousel-item">
                                                 <div class="row mb-3">
-                                                    <div class="col-md-4"><a href="javascript:void(0)" class="link-thumb"><g-image class="d-block w-100" src="~/assets/css/img/sslide-1.jpg" alt="First slide"/></a></div>
+                                                    <div class="col-md-4"><a href="javascript:void(0)" class="link-thumb"><g-image class="d-block w-100" src="~/assets/img/sslide-1.jpg" alt="First slide"/></a></div>
                                                     <div class="col-md-8"><small :class="right_posts_author_text">TECH - 12 Months Ago</small><a :class="right_posts_text" href="#" title="Title here">Dette er Apples nye MacBook Pro – alt er nytt</a></div>
                                                 </div>
                                                 <div class="row mb-3">
-                                                    <div class="col-md-4"><a href="javascript:void(0)" class="link-thumb"><g-image class="d-block w-100" src="~/assets/css/img/sslide-2.jpg" alt="First slide"/></a></div>
+                                                    <div class="col-md-4"><a href="javascript:void(0)" class="link-thumb"><g-image class="d-block w-100" src="~/assets/img/sslide-2.jpg" alt="First slide"/></a></div>
                                                     <div class="col-md-8"><small :class="right_posts_author_text">TECH - 12 Months Ago</small><a :class="right_posts_text" href="#" title="Title here">Gutt måtte opereres etter å skjøvet en USB-kabel inn i penis</a></div>
                                                 </div>
                                                 <div class="row mb-3">
-                                                    <div class="col-md-4"><a href="javascript:void(0)" class="link-thumb"><g-image class="d-block w-100" src="~/assets/css/img/sslide-3.jpg" alt="First slide"/></a></div>
+                                                    <div class="col-md-4"><a href="javascript:void(0)" class="link-thumb"><g-image class="d-block w-100" src="~/assets/img/sslide-3.jpg" alt="First slide"/></a></div>
                                                     <div class="col-md-8"><small :class="right_posts_author_text">TECH - 12 Months Ago</small><a :class="right_posts_text" href="#" title="Title here">Kameratrøbbel for Google Pixel 2-brukere</a></div>
                                                 </div>
                                             </div>
@@ -256,7 +256,7 @@
                     </div>
                     <div :class="weather_updated_text">Last updated:  22nd Mar, 2018 at 00:55</div>
                     <div>
-                        <g-image src="~/assets/css/img/weather.png" class="img-fluid" alt="Weather" />
+                        <g-image src="~/assets/img/weather.png" class="img-fluid" alt="Weather" />
                     </div>
                     <div class="bg-orange position-relative p-3 mt-3 subscribe-side">
                         <h3 class="h5 exo2 text-center text-white mb-3">Melde deg på</h3>

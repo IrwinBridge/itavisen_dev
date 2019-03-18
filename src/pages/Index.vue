@@ -10,7 +10,8 @@
             :img_url="edge.node.imgUrl"
             :title="edge.node.title"
             :excerpt="edge.node.excerpt"
-            :tagObj="edge.node.tags" />
+            :tagObj="edge.node.tags"
+            :comments="edge.node.comments" />
         </div>
       </div>
     </section>
@@ -28,6 +29,7 @@ query Posts {
         path
         imgUrl
         imgUrlFull
+        comments
         tags {
           id
           name
