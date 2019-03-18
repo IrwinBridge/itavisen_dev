@@ -2,7 +2,7 @@
     <div class="carousel-inner">
         <div class="carousel-item active">
             <figure class="figure position-relative">
-                <a class="position-absolute badge bg-orange-2 rounded-0 exo2 py-3 px-4 text-white text-uppercase" :href="'//' + posts[0].node.tags[0].link[0].substring(7)">{{posts[0].node.tags[0].name[0]}}</a>
+                <a v-if="posts[0].node.tags[0].id.length > 0" class="position-absolute badge bg-orange-2 rounded-0 exo2 py-3 px-4 text-white text-uppercase" :href="'//' + posts[0].node.tags[0].link[0].substring(7)">{{posts[0].node.tags[0].name[0]}}</a>
                 <div class="image-thumb">
                     <g-image :src="posts[0].node.imgUrlFull" class="figure-img img-fluid" alt="A generic 1600X900 placeholder image in a figure."/>
                 </div>
@@ -15,7 +15,7 @@
         </div>
         <div class="carousel-item">
             <figure class="figure position-relative">
-                <a class="position-absolute badge bg-orange-2 rounded-0 exo2 py-3 px-4 text-white text-uppercase" :href="'//' + posts[1].node.tags[0].link[0].substring(7)">{{posts[1].node.tags[0].name[0]}}</a>
+                <a v-if="posts[1].node.tags[0].id.length > 0" class="position-absolute badge bg-orange-2 rounded-0 exo2 py-3 px-4 text-white text-uppercase" :href="'//' + posts[1].node.tags[0].link[0].substring(7)">{{posts[1].node.tags[0].name[0]}}</a>
                 <div class="image-thumb">
                     <g-image :src="posts[1].node.imgUrlFull" class="figure-img img-fluid" alt="A generic 1600X900 placeholder image in a figure."/>
                 </div>
