@@ -6,8 +6,8 @@
                     <div class="row pt-4 pt-md-5">
                     <div class="col-md-4  pb-4">
                         <a href="index.html" title="Itavisen">
-                            <g-image src="~/assets/img/logo.png" class="logo-day" alt="Itavisen" />
-                            <g-image src="~/assets/img/logo-night.png" class="logo-night" alt="Itavisen" />
+                            <g-image src="~/assets/img/logo.png" class="logo-day" alt="Itavisen" immediate="true" />
+                            <g-image src="~/assets/img/logo-night.png" class="logo-night" alt="Itavisen" immediate="true" />
                         </a>
                         <div class="pull-right navbar navbar-light p-0">
                             <button class="navbar-toggler d-md-none bg-light" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
