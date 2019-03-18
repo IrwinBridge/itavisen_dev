@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <feature-section :posts="$page.posts.edges"></feature-section>
+    <feature-section :posts="$page.posts.edges" :comments="$page.comments.edges"></feature-section>
     <section class="article three-columns">
       <div class="container">
         <div class="row" v-for="i in rowCount" :key="i">
@@ -11,7 +11,7 @@
             :title="edge.node.title"
             :excerpt="edge.node.excerpt"
             :tagObj="edge.node.tags"
-            :comments="edge.node.comments" />
+            :comments="$page.comments.edges.slice(4)[index].node.comments + (parseInt($page.comments.edges.slice(4)[index].node.comments) == 1 ? ' comment' : ' comments')" />
           <advertise v-if="i == 1" />
         </div>
       </div>
@@ -30,12 +30,19 @@ query Posts {
         path
         imgUrl
         imgUrlFull
-        comments
         tags {
           id
           name
           link
         }
+      }
+    }
+  }
+  comments: allComments(sortBy: "date", order: DESC) {
+    edges {
+      node {
+        id
+        comments
       }
     }
   }
