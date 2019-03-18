@@ -94,8 +94,8 @@
             <div class="container">
                 <div class="row exo2 text-center ">
                 <div class="col-md-4 pb-4 text-md-left">
-                    <g-image src="~/assets/img/logo.png" class="logo-day" alt="Itavisen" />
-                    <g-image src="~/assets/img/logo-night.png" class="logo-night" alt="Itavisen" />
+                    <g-image src="~/assets/img/logo.png" class="logo-day" alt="Itavisen" immediate="true" />
+                    <g-image src="~/assets/img/logo-night.png" class="logo-night" alt="Itavisen" immediate="true" />
                     <p class="mb-2 mt-4">Tips Oss: <a href="mailto:red@itavisen.no" title="mail to red@itavisen.no"> red@itavisen.no</a></p>
                     <p class="pb-0">Ansvarlig Redaktør: Trond Bie</p>
                 </div>

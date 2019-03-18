@@ -256,7 +256,7 @@
                     </div>
                     <div :class="weather_updated_text">Last updated:  22nd Mar, 2018 at 00:55</div>
                     <div>
-                        <g-image src="~/assets/img/weather.png" class="img-fluid" alt="Weather" />
+                        <g-image src="~/assets/img/weather.png" class="img-fluid" alt="Weather" immediate="true" />
                     </div>
                     <div class="bg-orange position-relative p-3 mt-3 subscribe-side">
                         <h3 class="h5 exo2 text-center text-white mb-3">Melde deg på</h3>
