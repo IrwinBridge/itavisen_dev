@@ -12,6 +12,7 @@
             :excerpt="edge.node.excerpt"
             :tagObj="edge.node.tags"
             :comments="edge.node.comments" />
+          <advertise v-if="i == 1" />
         </div>
       </div>
     </section>
@@ -44,11 +45,13 @@ query Posts {
 <script>
 import FeatureSection from '~/components/FeatureSection.vue';
 import ArticlePost from '~/components/ArticlePost.vue';
+import Advertise from '~/components/Advertise.vue';
 
 export default {
   components: {
     FeatureSection,
-    ArticlePost
+    ArticlePost,
+    Advertise
   },
   computed: {
     rowCount() {

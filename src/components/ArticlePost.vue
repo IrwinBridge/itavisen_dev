@@ -9,9 +9,11 @@
                 </a>
             </div>
             <figcaption class="figure-caption">
-                <a v-for="(tag, index) in tags" :key="tag.id"
-                    :href="'//' + tag.link"
-                    class="color-2 font-12 exo2 text-uppercase">{{tag.name + ((index != tags.length - 1) ? ', ' : '')}}</a>
+                <div v-if="tags.length > 0">
+                    <a v-for="(tag, index) in tags" :key="tag.id"
+                        :href="'//' + tag.link"
+                        class="color-2 font-12 exo2 text-uppercase">{{tag.name + ((index != tags.length - 1) ? ', ' : '')}}</a>
+                </div>
                 <h2><a :class="text_class" :href="'//' + post_url" title="Title here" v-html="title">{{ title }}</a></h2>
                 <div v-html="excerpt"></div>
                 <p><i class="fa fa-comments mr-2 text-gray"></i>{{comments}}</p>
