@@ -1,6 +1,9 @@
 <template>
   <Layout>
     <feature-section :posts="$page.posts.edges" :popular="$page.popular.edges"></feature-section>
+    <advertise :id="'div-gpt-ad-9027848-4'"
+                :css_class="'container d-flex justify-content-center'"
+                :ad_class="'ad banner midtbannerbanner frontpage tablet-and-above lp_track mb-4'" />
     <section class="article three-columns">
       <div class="container">
         <div class="row" v-for="i in rowCount" :key="i">
@@ -12,7 +15,7 @@
             :excerpt="edge.node.excerpt"
             :tagObj="edge.node.tags"
             :comments="edge.node.comments.count + (parseInt(edge.node.comments.count) == 1 ? ' comment' : ' comments')" />
-          <!--advertise v-if="i == 1" :id="'div-gpt-ad-9027848-2'" /-->
+          <advertise v-if="i == 1" :id="'div-gpt-ad-9027848-5'" />
         </div>
       </div>
     </section>

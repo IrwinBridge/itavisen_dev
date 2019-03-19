@@ -5,6 +5,8 @@
                 <div class="left-side-content col-md-9">
                     <div class="row">
                         <div class="col-md-12 mb-2">
+                            <advertise :id="'div-gpt-ad-9027848-3'" :css_class="'ad-view-left'" :ad_class="'sidebar-left'" />
+                            <advertise :id="'div-gpt-ad-9027848-2'" :css_class="'ad-view-right'" :ad_class="'sidebar-right'" />
                             <div id="featured-slider" class="carousel slide" data-ride="carousel">
                                 <!-- Indicators -->
                                 <ul class="carousel-indicators row mx-4 mb-5">
@@ -239,12 +241,14 @@
 import EventBus from '../EventBus.js';
 import CarouselPosts from './CarouselPosts.vue';
 import RightPost from './RightPost.vue';
+import Advertise from '~/components/Advertise.vue';
 
 export default {
     components: {
         name: 'future-section',
         CarouselPosts,
-        RightPost
+        RightPost,
+        Advertise
     },
     props: {
         posts: Array,
@@ -300,5 +304,27 @@ export default {
     h2.h4 a.font-weight-bold {
         font-size: 0.75rem;
     }
+}
+
+.ad-view-left {
+    z-index: 1000;
+    position: absolute;
+    left: -185px !important;
+}
+
+.sidebar-left {
+    position: fixed;
+    top: 285px !important;
+}
+
+.ad-view-right {
+    z-index: 1000;
+    position: absolute;
+    right: -300px !important;
+}
+
+.sidebar-right {
+    position: fixed;
+    top: 285px !important;
 }
 </style>

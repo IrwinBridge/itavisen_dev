@@ -1,6 +1,6 @@
 <template>
     <div :class="css_class">
-        <div :id='id' class="ad-view-div-gpt"></div>
+        <div :id='id' :class="ad_class" data-ad-view-gpt="gpt"></div>
     </div>
 </template>
 
@@ -11,7 +11,8 @@ export default {
     },
     props: {
         id: String,
-        css_class: String
+        css_class: String,
+        ad_class: String
     }
 }
 </script>

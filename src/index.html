@@ -119,9 +119,9 @@
       // running until finds all the ad
       let js_ad_loading = setInterval(() => {
         let ads = [];
-        ads = document.getElementsByClassName("ad-view-div-gpt");
+        ads = document.querySelectorAll('[data-ad-view-gpt]');
         if (ads.length > 0) {
-          document.querySelectorAll(".ad-view-div-gpt").forEach(node => {
+          document.querySelectorAll('[data-ad-view-gpt]').forEach(node => {
               window.googletag.cmd.push(() => {
                 window.googletag.display(node.id);
               });
@@ -131,6 +131,5 @@
         }
       }, 1000);
     </script>
-
   </body>
 </html>
