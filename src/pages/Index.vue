@@ -79,7 +79,6 @@ export default {
     ArticlePost,
     Advertise
   },
-  mounted,
   computed: {
     rowCount() {
       return Math.ceil((this.$page.posts.edges.length) / 3);
