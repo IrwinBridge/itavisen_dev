@@ -2,27 +2,86 @@
 <html ${htmlAttrs}>
   <head>
     ${head}
-    <script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+    <!-- Start GPT Tag -->
+    <script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
     <script>
       var gptadslots = [];
       var googletag = googletag || {cmd:[]};
     </script>
-    <!-- GPT AdSlot 1 for Ad unit 'it_728x90_300x250_top_frontpages' ### Size: [[728,90],[300,250],[320,50],[320,320],[320,280],[320,250],[336,280]] -->
-    <!-- Adslot's refresh function: googletag.pubads().refresh([gptadslots[0]]) -->
-    <div id='div-gpt-ad-9027848-1'>
-      <script>
-        googletag.cmd.push(function() { googletag.display('div-gpt-ad-9027848-1'); });
-      </script>
-    </div>
-    <!-- End AdSlot 1 -->
-    <!-- GPT AdSlot 4 for Ad unit 'it_970x250_300x250_frontpages_1' ### Size: [[970,250],[980,150],[728,90],[980,300],[980,120],[970,90],[300,250],[320,320],[320,280],[320,250],[336,280]] -->
-    <!-- Adslot's refresh function: googletag.pubads().refresh([gptadslots[3]]) -->
-    <div id='div-gpt-ad-9027848-4' class='ad banner midtbannerbanner frontpage tablet-and-above lp_track'>
-      <script>
-        googletag.cmd.push(function() { googletag.display('div-gpt-ad-9027848-4'); });
-      </script>
-    </div>
-    <!-- End AdSlot 4 -->
+    <script>
+      googletag.cmd.push(function() {
+        var mapping1 = googletag.sizeMapping()
+                                .addSize([0, 0], [[300, 250], [320, 50]])
+                                .addSize([340, 200], [[300, 250], [320, 50], [320, 320], [320, 280], [320, 250], [336, 280]])
+                                .addSize([748, 200], [[728, 90]])
+                                .build();
+
+        var mapping2 = googletag.sizeMapping()
+                                .addSize([0, 0], [[300, 250]])
+                                .addSize([340, 200], [[300, 250], [320, 320], [320, 280], [320, 250], [336, 280]])
+                                .addSize([748, 200], [[728, 90]])
+                                .addSize([990, 200], [[970, 250], [970, 90], [980, 150], [980, 300], [980, 120]])
+                                .build();
+
+        //Adslot 1 declaration
+        gptadslots.push(googletag.defineSlot('/26278908/it_728x90_300x250_top_frontpages', [[728,90],[300,250],[320,50],[320,320],[320,280],[320,250],[336,280]], 'div-gpt-ad-9027848-1')
+                                .defineSizeMapping(mapping1)
+                                .addService(googletag.pubads()));
+        //Adslot 2 declaration
+        gptadslots.push(googletag.defineSlot('/26278908/it_160x600_sidebar_right_frontpages', [[160,600],[180,500],[120,600],[300,600]], 'div-gpt-ad-9027848-2')
+                                .addService(googletag.pubads()));
+        //Adslot 3 declaration
+        gptadslots.push(googletag.defineSlot('/26278908/it_160x600_sidebar_left_frontpages', [[160,600],[180,500],[120,600],[300,600]], 'div-gpt-ad-9027848-3')
+                                .addService(googletag.pubads()));
+        //Adslot 4 declaration
+        gptadslots.push(googletag.defineSlot('/26278908/it_970x250_300x250_frontpages_1', [[970,250],[980,150],[728,90],[980,300],[980,120],[970,90],[300,250],[320,320],[320,280],[320,250],[336,280]], 'div-gpt-ad-9027848-4')
+                                .defineSizeMapping(mapping2)
+                                .addService(googletag.pubads()));
+        //Adslot 5 declaration
+        gptadslots.push(googletag.defineSlot('/26278908/it_970x250_300x250_frontpages_2', [[970,250],[980,150],[728,90],[980,300],[980,120],[970,90],[300,250],[320,320],[320,280],[320,250],[336,280]], 'div-gpt-ad-9027848-5')
+                                .defineSizeMapping(mapping2)
+                                .addService(googletag.pubads()));
+        //Adslot 6 declaration
+        gptadslots.push(googletag.defineSlot('/26278908/it_970x250_300x250_frontpages_3', [[970,250],[980,150],[728,90],[980,300],[980,120],[970,90],[300,250],[320,320],[320,280],[320,250],[336,280]], 'div-gpt-ad-9027848-6')
+                                .defineSizeMapping(mapping2)
+                                .addService(googletag.pubads()));
+        //Adslot 7 declaration
+        gptadslots.push(googletag.defineSlot('/26278908/it_728x90_300x250_top_articlepages', [[728,90],[300,250],[320,50],[320,320],[320,280],[320,250],[336,280]], 'div-gpt-ad-9027848-7')
+                                .defineSizeMapping(mapping1)
+                                .addService(googletag.pubads()));
+        //Adslot 8 declaration
+        gptadslots.push(googletag.defineSlot('/26278908/it_160x600_sidebar_right_articlepages', [[160,600],[180,500],[120,600],[300,600]], 'div-gpt-ad-9027848-8')
+                                .addService(googletag.pubads()));
+        //Adslot 9 declaration
+        gptadslots.push(googletag.defineSlot('/26278908/it_160x600_sidebar_left_articlepages', [[160,600],[180,500],[120,600],[300,600]], 'div-gpt-ad-9027848-9')
+                                .addService(googletag.pubads()));
+        //Adslot 10 declaration
+        gptadslots.push(googletag.defineSlot('/26278908/it_300x250_articlepages', [[300,250],[320,320],[320,250],[320,280],[336,280]], 'div-gpt-ad-9027848-10')
+                                .addService(googletag.pubads()));
+        //Adslot 11 declaration
+        gptadslots.push(googletag.defineSlot('/26278908/it_970x250_300x250_articlepages', [[970,250],[980,150],[728,90],[980,300],[980,120],[970,90],[300,250],[320,320],[320,280],[320,250],[336,280]], 'div-gpt-ad-9027848-11')
+                                .defineSizeMapping(mapping2)
+                                .addService(googletag.pubads()));
+                                
+                      googletag.defineSlot('/21752231759/itavisen_300x250_article', [[336, 280], [300, 250]], 'div-gpt-ad-1552057160624-0').addService(googletag.pubads());
+                      
+                      googletag.defineSlot('/26278908/it_300x250_articlepages_2', [[320, 250], [320, 280], [320, 320], [336, 280], [300, 250]], 'div-gpt-ad-1552075516188-0').addService(googletag.pubads());
+                      
+                      googletag.defineSlot('/26278908/it_300x250_articlepages_3', [[300, 250], [320, 280], [336, 280], [320, 250], [320, 320]], 'div-gpt-ad-1552075713287-0').addService(googletag.pubads());
+                      
+                      googletag.defineSlot('/26278908/it_970x250_300x250_frontpages_4', [[980, 120], [300, 250], [970, 90], [320, 280], [320, 250], [970, 250], [336, 280], [728, 90], [320, 320], [980, 150], [980, 300]], 'div-gpt-ad-1552497065702-0') 
+                                .defineSizeMapping(mapping2)
+                                .addService(googletag.pubads());
+                      
+                        googletag.defineSlot('/26278908/it_970x250_300x250_frontpages_5', [[320, 250], [980, 120], [970, 90], [300, 250], [728, 90], [970, 250], [320, 280], [980, 150], [336, 280], [320, 320], [980, 300]], 'div-gpt-ad-1552497107886-0')
+                                .defineSizeMapping(mapping2)
+                                .addService(googletag.pubads());
+                                
+        googletag.pubads().enableSingleRequest();
+        googletag.enableServices();
+      });
+    </script>
+    <!-- End GPT Tag -->
   </head>
   <body ${bodyAttrs}>
     ${app}
@@ -53,5 +112,13 @@
             });
         });
     </script>
+    <!-- GPT AdSlot 1 for Ad unit 'it_728x90_300x250_top_frontpages' ### Size: [[728,90],[300,250],[320,50],[320,320],[320,280],[320,250],[336,280]] -->
+    <!-- Adslot's refresh function: googletag.pubads().refresh([gptadslots[0]]) -->
+    <div id='div-gpt-ad-9027848-1'>
+      <script>
+          googletag.cmd.push(function() { googletag.display('div-gpt-ad-9027848-1'); });
+      </script>
+    </div>
+    <!-- End AdSlot 1 -->
   </body>
 </html>

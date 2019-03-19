@@ -27,7 +27,7 @@
                                     <!--a href="#" class="badge bg-4 exo2 text-white py-2 px-2 exo2 rounded-10" title="Oppdatert">Oppdatert</a-->
                                     <h2 class="h4"><a class="text-white font-weight-bold" :href="posts[2].node.path.substring(7)" v-html="posts[2].node.title">{{posts[2].node.title}}</a></h2>
                                     <p class="text-white" v-html="posts[2].node.excerpt">{{posts[2].node.excerpt}}</p>
-                                    <p class="text-white"><i class="fa fa-comments mr-2 text-gray"></i>{{comments[2].node.comments + (parseInt(comments[2].node.comments) == 1 ? ' comment' : ' comments')}}</p>
+                                    <p class="text-white"><i class="fa fa-comments mr-2 text-gray"></i>{{posts[2].node.comments.count + (parseInt(posts[2].node.comments.count) == 1 ? ' comment' : ' comments')}}</p>
                                 </figcaption>
                             </figure>
                         </div>
@@ -43,7 +43,7 @@
                                     <!--a href="#" class="badge bg-4 exo2 text-white py-2 px-2 exo2 rounded-10" title="Oppdatert">Category</a-->
                                     <h2 class="h4"><a class="text-white font-weight-bold" :href="posts[3].node.path.substring(7)" v-html="posts[3].node.title">{{posts[3].node.title}}</a></h2>
                                     <p class="text-white" v-html="posts[3].node.excerpt">{{posts[3].node.excerpt}}</p>
-                                    <p class="text-white"><i class="fa fa-comments mr-2 "></i>{{comments[3].node.comments + (parseInt(comments[3].node.comments) == 1 ? ' comment' : ' comments')}}</p>
+                                    <p class="text-white"><i class="fa fa-comments mr-2 "></i>{{posts[3].node.comments.count + (parseInt(posts[3].node.comments.count) == 1 ? ' comment' : ' comments')}}</p>
                                 </figcaption>
                             </figure>
                         </div>
@@ -51,8 +51,8 @@
                 </div>
                 <div class="right-side-content mb-4 col-md-3">
                     <div class="row">
-                        <div class="col-md-12">
-                            <iframe src="https://www.youtube.com/embed/TF-YyuLHylo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <div class="col-md-12 px-0">
+                            <iframe class="col-md-12 p-0" src="https://www.youtube.com/embed/TF-YyuLHylo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             <h2 class="h4 mb-3"><a :class="video_link_text" href="#" title="Title here">Sjekk ut bilen  som gir Tesla konkurranse for 45 000 dollar</a></h2>
                         </div>
                     </div>
@@ -247,8 +247,7 @@ export default {
         RightPost
     },
     props: {
-        posts: Array,
-        comments: Array
+        posts: Array
     },
     data() {
         return {
@@ -263,7 +262,7 @@ export default {
         EventBus.$on('night-mode-toggler', (mode) => {
             this.toggleNightMode(mode);
         });
-        this.sortByPopularity(this.$props.comments);
+        this.sortByPopularity(this.$props.posts);
     },
     methods: {
         toggleNightMode(mode) {
@@ -279,17 +278,12 @@ export default {
                 this.right_posts_author_text = 'd-block text-half-black font-12 w-100';
             }
         },
-        sortByPopularity(comments) {
-            this.popular = this.$props.posts.slice();
-            for (const [index, item] in comments) {
-                this.popular[index].node.comments = comments[index].node.comments;
-            }
+        sortByPopularity(posts) {
+            this.popular = posts.slice();
             this.popular.sort((a, b) => {
-               return parseInt(a.node.comments) - parseInt(b.node.comments);
+               return parseInt(a.node.comments.count) - parseInt(b.node.comments.count);
             });
-            console.log(this.popular);
             this.popular = this.popular.reverse();
-            console.log(this.popular);
         }
     },
     watch: {

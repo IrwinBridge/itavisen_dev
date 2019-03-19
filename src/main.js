@@ -2,6 +2,8 @@ import DefaultLayout from '~/layouts/Default.vue';
 import '~/assets/css/custom.css';
 
 export default function (Vue, { router, head, isClient }) {
+  head.title = 'ITAVISEN';
+  head.titleTemplate = '%s - Home';
   head.link.push({
     rel: 'stylesheet',
     href: "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
