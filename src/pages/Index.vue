@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <feature-section :posts="$page.posts.edges"></feature-section>
+    <feature-section :posts="$page.posts.edges" :popular="$page.popular.edges"></feature-section>
     <section class="article three-columns">
       <div class="container">
         <div class="row" v-for="i in rowCount" :key="i">
@@ -30,6 +30,27 @@ query Posts {
         path
         imgUrl
         imgUrlFull
+        tags {
+          id
+          name
+          link
+        }
+        comments {
+          id
+          date
+          count
+        }
+      }
+    }
+  }
+  popular: allPosts(sortBy: "comments.count", order: DESC) {
+    edges {
+      node {
+        id
+        title
+        excerpt
+        path
+        imgUrl
         tags {
           id
           name

@@ -247,7 +247,8 @@ export default {
         RightPost
     },
     props: {
-        posts: Array
+        posts: Array,
+        popular: Array
     },
     data() {
         return {
@@ -255,14 +256,12 @@ export default {
             right_posts_text: 'font-15 text-black font-weight-bold',
             weather_updated_text: 'mt-3 mb-2 font-14 text-black',
             right_posts_author_text: 'd-block text-half-black font-12 w-100',
-            popular: []
         }
     },
     mounted() {
         EventBus.$on('night-mode-toggler', (mode) => {
             this.toggleNightMode(mode);
         });
-        this.sortByPopularity(this.$props.posts);
     },
     methods: {
         toggleNightMode(mode) {
@@ -277,21 +276,6 @@ export default {
                 this.weather_updated_text = 'mt-3 mb-2 font-14 text-black';
                 this.right_posts_author_text = 'd-block text-half-black font-12 w-100';
             }
-        },
-        sortByPopularity(posts) {
-            this.popular = posts.slice();
-            this.popular.sort((a, b) => {
-               return parseInt(a.node.comments.count) - parseInt(b.node.comments.count);
-            });
-            this.popular = this.popular.reverse();
-        }
-    },
-    watch: {
-        posts: (newval, oldval) => {
-            this.sortByPopularity(newval);
-        },
-        popular: (newval, oldval) => {
-            console.log(newval);
         }
     }
 }
