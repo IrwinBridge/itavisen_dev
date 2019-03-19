@@ -15,7 +15,7 @@
             :excerpt="edge.node.excerpt"
             :tagObj="edge.node.tags"
             :comments="edge.node.comments.count + (parseInt(edge.node.comments.count) == 1 ? ' comment' : ' comments')" />
-          <advertise v-if="i == 1" :id="'div-gpt-ad-9027848-5'" />
+          <advertise v-if="i == 1" :id="'div-gpt-ad-9027848-5'" :css_class="'d-flex justify-content-center'" />
         </div>
       </div>
     </section>

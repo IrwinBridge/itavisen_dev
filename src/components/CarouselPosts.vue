@@ -2,9 +2,9 @@
     <div class="carousel-inner">
         <div class="carousel-item active">
             <figure class="figure position-relative">
-                <a v-if="posts[0].node.tags[0].id.length > 0" class="position-absolute badge bg-orange-2 rounded-0 exo2 py-3 px-4 text-white text-uppercase" :href="'//' + posts[0].node.tags[0].link[0].substring(7)">{{posts[0].node.tags[0].name[0]}}</a>
-                <div class="image-thumb">
-                    <g-image :src="posts[0].node.imgUrlFull" class="figure-img img-fluid" alt="A generic 1600X900 placeholder image in a figure." style="min-height:518px!important"/>
+                <a v-if="posts[0].node.tags[0].id.length > 0" class="position-absolute badge bg-orange-2 rounded-0 exo2 py-3 px-4 text-white text-uppercase up-z" :href="'//' + posts[0].node.tags[0].link[0].substring(7)">{{posts[0].node.tags[0].name[0]}}</a>
+                <div class="image-thumb overlay">
+                    <g-image :src="posts[0].node.imgUrlFull" class="figure-img img-fluid fit-gimg" alt="A generic 1600X900 placeholder image in a figure."/>
                 </div>
                 <figcaption class="figure-caption position-absolute-bottom p-3">
                     <h2><a class="text-white font-weight-bold" :href="'//' + posts[0].node.path.substring(7)" v-html="posts[0].node.title">{{posts[0].node.title}}</a></h2>
@@ -15,11 +15,11 @@
         </div>
         <div class="carousel-item">
             <figure class="figure position-relative">
-                <a v-if="posts[1].node.tags[0].id.length > 0" class="position-absolute badge bg-orange-2 rounded-0 exo2 py-3 px-4 text-white text-uppercase" :href="'//' + posts[1].node.tags[0].link[0].substring(7)">{{posts[1].node.tags[0].name[0]}}</a>
-                <div class="image-thumb">
-                    <g-image :src="posts[1].node.imgUrlFull" class="figure-img img-fluid" alt="A generic 1600X900 placeholder image in a figure." style="min-height:518px!important"/>
+                <a v-if="posts[1].node.tags[0].id.length > 0" class="position-absolute badge bg-orange-2 rounded-0 exo2 py-3 px-4 text-white text-uppercase up-z" :href="'//' + posts[1].node.tags[0].link[0].substring(7)">{{posts[1].node.tags[0].name[0]}}</a>
+                <div class="image-thumb overlay">
+                    <g-image :src="posts[1].node.imgUrlFull" class="figure-img img-fluid fit-gimg" alt="A generic 1600X900 placeholder image in a figure."/>
                 </div>
-                <figcaption class="figure-caption  position-absolute-bottom p-3">
+                <figcaption class="figure-caption position-absolute-bottom p-3">
                     <h2><a class="text-white font-weight-bold" :href="'//' + posts[1].node.path.substring(7)" v-html="posts[1].node.title">{{posts[1].node.title}}</a></h2>
                     <p class="text-white" v-html="posts[1].node.excerpt"></p>
                     <p class="p-2"></p>
@@ -79,5 +79,24 @@ export default {
     h2 a {
         font-size: 0.75rem;
     }
+}
+
+.image-thumb.overlay::after {
+    content:"";
+    display: block;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.up-z {
+    z-index: 10
+}
+
+.fit-gimg {
+    min-height: 440px !important;
 }
 </style>

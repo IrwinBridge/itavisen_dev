@@ -22,7 +22,7 @@
                                 <a v-if="posts[2].node.tags[0].id.length > 0" class="position-absolute badge bg-3 rounded-0 exo2 text-white py-3 px-4 text-uppercase" :href="'//' + posts[2].node.tags[0].link[0].substring(7)">{{posts[2].node.tags[0].name[0]}}</a>
                                 <div class="image-thumb">
                                     <a :href="posts[2].node.path.substring(7)" class="link-thumb">
-                                        <g-image :src="posts[2].node.imgUrlFull" class="figure-img img-fluid" alt="A generic 1600X1200 placeholder image in a figure." style="min-height:384px!important" />
+                                        <g-image :src="posts[2].node.imgUrlFull" class="figure-img img-fluid" alt="A generic 1600X1200 placeholder image in a figure." style="height:505px!important" />
                                     </a>
                                 </div>
                                 <figcaption class="figure-caption position-absolute-bottom p-3">
@@ -38,7 +38,7 @@
                                 <a v-if="posts[3].node.tags[0].id.length > 0" class="badge bg-orange exo2 text-white position-absolute py-3 px-4 rounded-0 text-uppercase" :href="'//' + posts[3].node.tags[0].link[0].substring(7)">{{posts[3].node.tags[0].name[0]}}</a>
                                 <div class="image-thumb">
                                     <a :href="posts[3].node.path.substring(7)" class="link-thumb">
-                                        <g-image :src="posts[3].node.imgUrlFull" class="figure-img img-fluid" alt="A generic 1600X1200 placeholder image in a figure." style="min-height:384px!important" />
+                                        <g-image :src="posts[3].node.imgUrlFull" class="figure-img img-fluid" alt="A generic 1600X1200 placeholder image in a figure." style="height:505px!important" />
                                     </a>
                                 </div>
                                 <figcaption class="figure-caption position-absolute-bottom p-3">
