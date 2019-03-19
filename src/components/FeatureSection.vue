@@ -287,8 +287,11 @@ export default {
         }
     },
     watch: {
-        comments: (newval, oldval) => {
+        posts: (newval, oldval) => {
             this.sortByPopularity(newval);
+        },
+        popular: (newval, oldval) => {
+            console.log(newval);
         }
     }
 }
