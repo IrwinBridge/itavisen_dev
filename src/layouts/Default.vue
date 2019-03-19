@@ -125,7 +125,6 @@
 <script>
 import EventBus from '../EventBus.js';
 import Advertise from '~/components/Advertise.vue';
-import { displayAds as mounted } from "~/commons.js";
 
 export default {
     components: {
@@ -137,7 +136,6 @@ export default {
             text_black: 'mr-2 font-14 align-middle text-black exo2'
         }
     },
-    mounted,
     methods: {
         toggleNightMode() {
             this.nightMode = !this.nightMode;

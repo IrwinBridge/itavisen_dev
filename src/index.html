@@ -86,9 +86,7 @@
     <!-- End GPT Tag -->
   </head>
   <body ${bodyAttrs}>
-
     ${app}
-
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
             integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
             crossorigin="anonymous">
@@ -116,5 +114,23 @@
             });
         });
     </script>
+
+    <script>
+      // running until finds all the ad
+      let js_ad_loading = setInterval(() => {
+        let ads = [];
+        ads = document.getElementsByClassName("ad-view-div-gpt");
+        if (ads.length > 0) {
+          document.querySelectorAll(".ad-view-div-gpt").forEach(node => {
+              window.googletag.cmd.push(() => {
+                window.googletag.display(node.id);
+              });
+          });
+          // stop timer
+          clearInterval(js_ad_loading);
+        }
+      }, 1000);
+    </script>
+
   </body>
 </html>
