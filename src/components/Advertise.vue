@@ -3,7 +3,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <g-image src="~/assets/img/advertisement.png" class="img-fluid" alt="Advertise Here" immediate="true" />
+                    <div id='div-gpt-ad-9027848-3'>
+                    </div>
                 </div>
             </div>
         </div>
