@@ -3,6 +3,7 @@
         <div class="layout">
             <header class="site-header mb-4">
                 <div class="container">
+                    <advertise :id="'div-gpt-ad-9027848-1'" :css_class="'d-flex justify-content-center mt-2'" />
                     <div class="row pt-4 pt-md-5">
                     <div class="col-md-4  pb-4">
                         <a href="index.html" title="Itavisen">
@@ -123,8 +124,12 @@
 
 <script>
 import EventBus from '../EventBus.js';
+import Advertise from '~/components/Advertise.vue';
 
 export default {
+    components: {
+        Advertise
+    },
     data() {
         return {
             nightMode: false,

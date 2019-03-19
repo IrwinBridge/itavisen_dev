@@ -1,20 +1,17 @@
 <template>
-    <section class="advertise mb-5 exo2">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div id='div-gpt-ad-9027848-3'>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div :class="css_class">
+        <div :id='id' class="ad-view-div-gpt"></div>
+    </div>
 </template>
 
 <script>
 export default {
     components: {
         name: 'advertise'
+    },
+    props: {
+        id: String,
+        css_class: String
     }
 }
 </script>

@@ -12,7 +12,7 @@
             :excerpt="edge.node.excerpt"
             :tagObj="edge.node.tags"
             :comments="edge.node.comments.count + (parseInt(edge.node.comments.count) == 1 ? ' comment' : ' comments')" />
-          <advertise v-if="i == 1" />
+          <!--advertise v-if="i == 1" :id="'div-gpt-ad-9027848-2'" /-->
         </div>
       </div>
     </section>
@@ -71,6 +71,7 @@ query Posts {
 import FeatureSection from '~/components/FeatureSection.vue';
 import ArticlePost from '~/components/ArticlePost.vue';
 import Advertise from '~/components/Advertise.vue';
+import { displayAds as mounted } from "~/commons.js";
 
 export default {
   components: {
@@ -78,6 +79,7 @@ export default {
     ArticlePost,
     Advertise
   },
+  mounted,
   computed: {
     rowCount() {
       return Math.ceil((this.$page.posts.edges.length) / 3);
