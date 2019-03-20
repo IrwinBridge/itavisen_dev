@@ -185,6 +185,7 @@
         video_ads = document.querySelectorAll('#vi-stories-top-div');
         if (video_ads.length > 0) {
           // Change the style
+          document.querySelector('#vi-stories-main-container').classList.remove('vi-stories-width-min-800');
           document.querySelector('#vi-stories-title').style.setProperty('font-size', '1em', 'important');
           // Move element to .homepage-video-area .wrap
           $('.homepage-video-area .wrap').append($('#vi-stories-top-div'));
