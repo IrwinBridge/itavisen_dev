@@ -54,9 +54,10 @@
                 <div class="right-side-content mb-4 col-md-3">
                     <div class="row">
                         <div class="col-md-12 px-2">
-                            <ClientOnly>
-                                <video-ad></video-ad>
-                            </ClientOnly>
+                            <div class="homepage-video-area">
+                                <div class="wrap">
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="row tabs d-none d-lg-block">
@@ -243,15 +244,13 @@ import EventBus from '../EventBus.js';
 import CarouselPosts from './CarouselPosts.vue';
 import RightPost from './RightPost.vue';
 import Advertise from '~/components/Advertise.vue';
-import VideoAd from '~/components/VideoAd.vue';
 
 export default {
     components: {
         name: 'future-section',
         CarouselPosts,
         RightPost,
-        Advertise,
-        VideoAd
+        Advertise
     },
     props: {
         posts: Array,
