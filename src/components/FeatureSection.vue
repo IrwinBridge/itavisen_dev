@@ -22,7 +22,7 @@
                                 <a v-if="posts[2].node.tags[0].id.length > 0" class="position-absolute badge bg-3 rounded-0 exo2 text-white py-3 px-4 text-uppercase" :href="'//' + posts[2].node.tags[0].link[0].substring(7)">{{posts[2].node.tags[0].name[0]}}</a>
                                 <div class="image-thumb">
                                     <a :href="posts[2].node.path.substring(7)" class="link-thumb">
-                                        <g-image :src="posts[2].node.imgUrlFull" class="figure-img img-fluid" alt="A generic 1600X1200 placeholder image in a figure." style="height:505px!important" />
+                                        <g-image :src="posts[2].node.imgUrlFull" class="figure-img img-fluid" alt="A generic 1600X1200 placeholder image in a figure." style="height:256px!important" />
                                     </a>
                                 </div>
                                 <figcaption class="figure-caption position-absolute-bottom p-3">
@@ -38,7 +38,7 @@
                                 <a v-if="posts[3].node.tags[0].id.length > 0" class="badge bg-orange exo2 text-white position-absolute py-3 px-4 rounded-0 text-uppercase" :href="'//' + posts[3].node.tags[0].link[0].substring(7)">{{posts[3].node.tags[0].name[0]}}</a>
                                 <div class="image-thumb">
                                     <a :href="posts[3].node.path.substring(7)" class="link-thumb">
-                                        <g-image :src="posts[3].node.imgUrlFull" class="figure-img img-fluid" alt="A generic 1600X1200 placeholder image in a figure." style="height:505px!important" />
+                                        <g-image :src="posts[3].node.imgUrlFull" class="figure-img img-fluid" alt="A generic 1600X1200 placeholder image in a figure." style="height:256px!important" />
                                     </a>
                                 </div>
                                 <figcaption class="figure-caption position-absolute-bottom p-3">
@@ -53,9 +53,8 @@
                 </div>
                 <div class="right-side-content mb-4 col-md-3">
                     <div class="row">
-                        <div class="col-md-12 px-0">
-                            <iframe class="col-md-12 p-0" src="https://www.youtube.com/embed/TF-YyuLHylo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                            <h2 class="h4 mb-3"><a :class="video_link_text" href="#" title="Title here">Sjekk ut bilen  som gir Tesla konkurranse for 45 000 dollar</a></h2>
+                        <div class="col-md-12 px-2">
+                            <div class="homepage-video-area"><div class="wrap"></div></div>
                         </div>
                     </div>
                     <div class="row tabs d-none d-lg-block">
@@ -266,6 +265,7 @@ export default {
         EventBus.$on('night-mode-toggler', (mode) => {
             this.toggleNightMode(mode);
         });
+        this.runAdScript();
     },
     methods: {
         toggleNightMode(mode) {
@@ -280,6 +280,9 @@ export default {
                 this.weather_updated_text = 'mt-3 mb-2 font-14 text-black';
                 this.right_posts_author_text = 'd-block text-half-black font-12 w-100';
             }
+        },
+        runAdScript() {
+            
         }
     }
 }

@@ -6,7 +6,7 @@
             </a>
         </div>
         <div class="col-md-8">
-            <small :class="right_posts_author_text">TECH - 12 Months Ago</small>
+            <small :class="right_posts_author_text">TECH - Few Days Ago</small>
             <a :class="right_posts_text" :href="'//' + path.substring(7)" v-html="title">{{title}}</a>
         </div>
     </div>

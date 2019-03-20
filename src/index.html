@@ -136,5 +136,38 @@
         }
       }, 1000);
     </script>
+    <script>
+      let js_video_ad_loading = setInterval(() => {
+        let video_ads = [];
+        video_ads = document.querySelectorAll('.homepage-video-area');
+        if (video_ads.length > 0) {
+          ((v,i) => {
+              let scp = v.createElement('script');
+              let config = {
+                  ChannelID: '5bb1bf7f073ef4613b554e0f',
+                  AdUnitType: '2',
+                  PublisherID: '594223687850985',
+                  PlacementID: 'pltOUvrpWjn5SzBU33P',
+                  DivID: '',
+                  IAB_Category: 'IAB19',
+                  Keywords: '',
+                  Language: 'en-us',
+                  BG_Color: '',
+                  Text_Color: '',
+                  Font: '',
+                  FontSize: '',
+              };
+              scp.src='https://s.vi-serve.com/tagLoader.js';
+              scp.type = 'text/javascript';
+              scp.onload = function() {
+                  i[btoa('video intelligence start')].init(config);
+              };
+              (v.getElementsByTagName('head')[0] || v.documentElement.appendChild(v.createElement('head'))).appendChild(scp);
+          })(document, window);
+          // stop timer
+          clearInterval(js_video_ad_loading);
+        }
+      }, 1000);
+    </script>
   </body>
 </html>

@@ -22,6 +22,34 @@
     </div>
 </template>
 
+<!--template>
+    <div class="container">
+        <div class="row">
+            <div id="1" class="col-md-4 mb-4 article-post">
+                <figure class="figure position-relative">
+                    <div class="image-thumb position-relative">
+                        <a :href="'//' + $page.posts.edges[4].node.path" class="link-thumb">
+                            <g-image src="~/assets/fetched_images/4.jpg"
+                                        class="figure-img img-fluid mb-0"
+                                        alt="A generic 400X300 placeholder image in a figure." />
+                        </a>
+                    </div>
+                    <figcaption class="figure-caption">
+                        <div v-if="tags.length > 0">
+                            <a v-for="(tag, index) in tags" :key="tag.id"
+                                :href="'//' + tag.link"
+                                class="color-2 font-12 exo2 text-uppercase">{{tag.name + ((index != tags.length - 1) ? ', ' : '')}}</a>
+                        </div>
+                        <h2><a :class="text_class" :href="'//' + post_url" title="Title here" v-html="title">{{ title }}</a></h2>
+                        <div v-html="excerpt"></div>
+                        <p><i class="fa fa-comments mr-2 text-gray"></i>{{comments}}</p>
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+</template-->
+
 <script>
 import EventBus from '../EventBus.js';
 
@@ -33,7 +61,10 @@ export default {
         post_id: Number,
         title: String,
         excerpt: String,
-        img_url: String,
+        img_url: {
+            type: String,
+            required: true
+        },
         path: String,
         comments: String,
         tagObj: {
@@ -57,6 +88,12 @@ export default {
         EventBus.$on('night-mode-toggler', (mode) => {
             this.toggleNightMode(mode);
         })
+    },
+    computed: {
+        setImage() {
+            //return require(this.$props.img_url);
+            return require(`${this.$props.img_url}`)
+        }
     },
     methods: {
         toggleNightMode(mode) {
