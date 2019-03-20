@@ -4,6 +4,18 @@ import '~/assets/css/custom.css';
 export default function (Vue, { router, head, isClient }) {
   head.title = 'ITAVISEN';
   head.titleTemplate = '%s - Home';
+  head.meta.push({
+    name: 'author',
+    content: 'ITavisen.no/'
+  });
+  head.meta.push({
+    name: 'description',
+    content: 'For deg som lever digitalt'
+  });
+  head.meta.push({
+    property: 'og:description',
+    content: 'For deg som lever digitalt'
+  });
   head.link.push({
     rel: 'stylesheet',
     href: "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
