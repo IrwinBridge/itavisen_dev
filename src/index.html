@@ -89,6 +89,16 @@
     </script>
     <!-- End GPT Tag -->
     ${head}
+    <style type="text/css">
+      .new-video-ad-title {
+        color: #222 !important;
+        font-family: "Roboto", sans-serif !important;
+        font-size: 1em !important;
+        letter-spacing: -0.02em !important;
+        line-height: 1.4 !important;
+        margin-top: 25px !important;
+      }
+    </style>
   </head>
   <body ${bodyAttrs}>
     ${app}
@@ -174,8 +184,11 @@
         let video_ads = [];
         video_ads = document.querySelectorAll('#vi-stories-top-div');
         if (video_ads.length > 0) {
+          // Change the style
+          document.querySelector('#vi-stories-title').style.setProperty('font-size', '1em', 'important');
           // Move element to .homepage-video-area .wrap
           $('.homepage-video-area .wrap').append($('#vi-stories-top-div'));
+          //$('#vi-stories-title').addClass('new-video-ad-title');
           // Stop timer
           clearInterval(video_ad_timer);
         }
