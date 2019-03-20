@@ -54,7 +54,10 @@
                 <div class="right-side-content mb-4 col-md-3">
                     <div class="row">
                         <div class="col-md-12 px-2">
-                            <div class="homepage-video-area"><div class="wrap"></div></div>
+                            <div class="homepage-video-area">
+                                <div class="wrap">
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="row tabs d-none d-lg-block">
@@ -241,6 +244,7 @@ import EventBus from '../EventBus.js';
 import CarouselPosts from './CarouselPosts.vue';
 import RightPost from './RightPost.vue';
 import Advertise from '~/components/Advertise.vue';
+import axios from 'axios';
 
 export default {
     components: {
@@ -265,7 +269,11 @@ export default {
         EventBus.$on('night-mode-toggler', (mode) => {
             this.toggleNightMode(mode);
         });
-        this.runAdScript();
+        
+        let ad_video = document.createElement('script');
+        ad_video.setAttribute('src', '//itavisen.bbvms.com/p/itavisen_player_skin/y/PvCX5-ie8Z4.js');
+        ad_video.async = true;
+        document.querySelector('.homepage-video-area .wrap').appendChild(ad_video);
     },
     methods: {
         toggleNightMode(mode) {
@@ -280,9 +288,6 @@ export default {
                 this.weather_updated_text = 'mt-3 mb-2 font-14 text-black';
                 this.right_posts_author_text = 'd-block text-half-black font-12 w-100';
             }
-        },
-        runAdScript() {
-            
         }
     }
 }
