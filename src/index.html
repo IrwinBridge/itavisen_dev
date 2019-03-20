@@ -169,5 +169,17 @@
         }
       }, 1000);
     </script>
+    <script>
+      let video_ad_timer = setInterval(() => {
+        let video_ads = [];
+        video_ads = document.querySelectorAll('#vi-stories-top-div');
+        if (video_ads.length > 0) {
+          // Move element to .homepage-video-area .wrap
+          $('.homepage-video-area .wrap').append($('#vi-stories-top-div'));
+          // Stop timer
+          clearInterval(video_ad_timer);
+        }
+      }, 1000);
+    </script>
   </body>
 </html>
