@@ -8,7 +8,7 @@ module.exports = function (api) {
     const { data: wp_data } = await axios.get(`https://itavisen.no/wp-json/wp/v2/posts?filter[orderby]=date&order=desc&_embed&per_page=${wp_limit}`);
 
     const disqus_api_key = 's52FRdZEH9I2DS15s0tX7wx5AQe9b6xVH9P42jztLDlq5nX8eqVBVWrE2Vfhc7TP';
-    const disqus_limit = wp_limit * 2;
+    //const disqus_limit = wp_limit * 2;
     const comments_data = await axios.get(`https://disqus.com/api/3.0/forums/listThreads.json?forum=itavisen&limit=${100}&api_key=${disqus_api_key}`);
 
     const posts = store.addContentType({
@@ -21,10 +21,10 @@ module.exports = function (api) {
       });
     }
 
-    function extractImageName(url) {
+    /*function extractImageName(url) {
       const temp_arr = url.split('/');
       return temp_arr[temp_arr.length - 1];
-    }
+    }*/
 
     function getThumbnail(post) {
       if (typeof post._embedded['wp:featuredmedia'][0].media_details.sizes['post-thumbnail'] === 'undefined')
@@ -51,7 +51,7 @@ module.exports = function (api) {
       });
     })();*/
 
-    async function fetchImage(url, fnm) {
+    /*async function fetchImage(url, fnm) {
       const filename = extractImageName(url);
       const path = Path.resolve(__dirname, 'static/images', fnm);
       const writer = Fs.createWriteStream(path);
@@ -76,7 +76,7 @@ module.exports = function (api) {
         await fetchImage(getFullImage(item), `${i}_full.jpg`);
       });
     }
-    await writeAllImages();
+    await writeAllImages();*/
 
     wp_data.forEach((item, i) => {
       posts.addNode({
@@ -86,8 +86,8 @@ module.exports = function (api) {
         excerpt: item.excerpt.rendered,
         path: item.link,
         fields: {
-          imgUrl: `./images/${i}.jpg`,
-          imgUrlFull: `./images/${i}_full.jpg`,
+          imgUrl: getThumbnail(item), //`./images/${i}.jpg`,
+          imgUrlFull: getFullImage(item), //`./images/${i}_full.jpg`,
           tags: [{
             id: item._embedded['wp:term'][1].map((tag) => {
               return tag.id;
