@@ -26,6 +26,13 @@ module.exports = function (api) {
       return temp_arr[temp_arr.length - 1];
     }
 
+    function getImageFromWPPost(post) {
+      if (typeof post._embedded['wp:featuredmedia'][0].media_details.sizes['post-thumbnail'] === 'undefined')
+        return post._embedded['wp:featuredmedia'][0].media_details.sizes['full'].source_url;
+      else
+        return post._embedded['wp:featuredmedia'][0].media_details.sizes['post-thumbnail'].source_url;
+    }
+
     /*(function deleteImages() {
       const directory = Path.resolve(__dirname, 'src/assets/fetched_images/');
 
@@ -75,7 +82,7 @@ module.exports = function (api) {
         excerpt: item.excerpt.rendered,
         path: item.link,
         fields: {
-          imgUrl: item._embedded['wp:featuredmedia'][0].media_details.sizes['post-thumbnail'].source_url,//'@/assets/fetched_images/' + extractImageName(item._embedded['wp:featuredmedia'][0].media_details.sizes['post-thumbnail'].source_url),
+          imgUrl: getImageFromWPPost(item),//'@/assets/fetched_images/' + extractImageName(item._embedded['wp:featuredmedia'][0].media_details.sizes['post-thumbnail'].source_url),
           imgUrlFull: item._embedded['wp:featuredmedia'][0].media_details.url,//'@/assets/fetched_images/' + extractImageName(item._embedded['wp:featuredmedia'][0].media_details.url),
           tags: [{
             id: item._embedded['wp:term'][1].map((tag) => {
