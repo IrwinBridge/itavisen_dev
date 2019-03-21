@@ -26,11 +26,15 @@ module.exports = function (api) {
       return temp_arr[temp_arr.length - 1];
     }
 
-    function getImageFromWPPost(post) {
+    function getThumbnail(post) {
       if (typeof post._embedded['wp:featuredmedia'][0].media_details.sizes['post-thumbnail'] === 'undefined')
         return post._embedded['wp:featuredmedia'][0].media_details.sizes['full'].source_url;
       else
         return post._embedded['wp:featuredmedia'][0].media_details.sizes['post-thumbnail'].source_url;
+    }
+
+    function getFullImage(post) {
+        return post._embedded['wp:featuredmedia'][0].media_details.url;
     }
 
     /*(function deleteImages() {
@@ -47,9 +51,9 @@ module.exports = function (api) {
       });
     })();*/
 
-    /*async function fetchImage(url) {
+    async function fetchImage(url, fnm) {
       const filename = extractImageName(url);
-      const path = Path.resolve(__dirname, 'src/assets/fetched_images', filename);
+      const path = Path.resolve(__dirname, 'static/images', fnm);
       const writer = Fs.createWriteStream(path);
 
       const response = await axios({
@@ -67,12 +71,12 @@ module.exports = function (api) {
     }
 
     async function writeAllImages() {
-      wp_data.forEach(async (item) => {
-        await fetchImage(item._embedded['wp:featuredmedia'][0].media_details.sizes['post-thumbnail'].source_url);
-        await fetchImage(item._embedded['wp:featuredmedia'][0].media_details.url);
+      wp_data.forEach(async (item, i) => {
+        await fetchImage(getThumbnail(item), `${i}.jpg`);
+        await fetchImage(getFullImage(item), `${i}_full.jpg`);
       });
     }
-    await writeAllImages();*/
+    await writeAllImages();
 
     wp_data.forEach((item, i) => {
       posts.addNode({
@@ -82,8 +86,8 @@ module.exports = function (api) {
         excerpt: item.excerpt.rendered,
         path: item.link,
         fields: {
-          imgUrl: getImageFromWPPost(item),//'@/assets/fetched_images/' + extractImageName(item._embedded['wp:featuredmedia'][0].media_details.sizes['post-thumbnail'].source_url),
-          imgUrlFull: item._embedded['wp:featuredmedia'][0].media_details.url,//'@/assets/fetched_images/' + extractImageName(item._embedded['wp:featuredmedia'][0].media_details.url),
+          imgUrl: `./images/${i}.jpg`,
+          imgUrlFull: `./images/${i}_full.jpg`,
           tags: [{
             id: item._embedded['wp:term'][1].map((tag) => {
               return tag.id;
