@@ -28,7 +28,7 @@ module.exports = function (api) {
 
     function getThumbnail(post) {
       if (typeof post._embedded['wp:featuredmedia'][0].media_details.sizes['post-thumbnail'] === 'undefined')
-        return post._embedded['wp:featuredmedia'][0].media_details.sizes['full'].source_url;
+        return post._embedded['wp:featuredmedia'][0].media_details.url;
       else
         return post._embedded['wp:featuredmedia'][0].media_details.sizes['post-thumbnail'].source_url;
     }
